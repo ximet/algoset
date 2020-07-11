@@ -29,7 +29,9 @@ class LinkedList:
             return self
         prevNode = self.head
         for node in self:
-            if node.data == value:
+            if node.value == value:
                 prevNode.next = node.next
+                if node.next == None:
+                    self.tail = prevNode
                 return self
             prevNode = node
