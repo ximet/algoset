@@ -46,6 +46,7 @@ def test_iteration():
         counter += 1
 
 # size tests
+
 def test_emptyLinkedList():
     linkedList = LinkedList()
     assert linkedList.size() == 0
@@ -57,6 +58,7 @@ def test_LinkedListWithTwoValues():
     assert linkedList.size() == 2
 
 # search test
+
 def test_searchInEmptyLinkedList():
     linkedList = LinkedList()
     assert linkedList.search(2) == None
@@ -71,6 +73,7 @@ def test_searchValueLinkedList():
     assert linkedList.search(3) == None
 
 # reverse test
+
 def test_reverseLinkedList():
     linkedList = LinkedList()
     linkedList.append(1)
