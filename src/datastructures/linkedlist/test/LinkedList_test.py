@@ -44,3 +44,28 @@ def test_iteration():
     for node in linkedList:
         assert node.value == counter
         counter += 1
+
+# size tests
+def test_emptyLinkedList():
+    linkedList = LinkedList()
+    assert linkedList.size() == 0
+
+def test_LinkedListWithTwoValues():
+    linkedList = LinkedList()
+    linkedList.append(1)
+    linkedList.append(2)
+    assert linkedList.size() == 2
+
+# search test
+def test_searchInEmptyLinkedList():
+    linkedList = LinkedList()
+    assert linkedList.search(2) == None
+
+def test_searchValueLinkedList():
+    linkedList = LinkedList()
+    linkedList.append(1)
+    linkedList.append(2)
+    assert linkedList.search(1).value == 1
+    assert linkedList.search(2).value == 2
+    assert linkedList.search(1).next.value == 2
+    assert linkedList.search(3) == None
