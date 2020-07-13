@@ -54,3 +54,15 @@ class LinkedList:
             if item.value == value:
                 node = item
         return node
+
+    def reverse(self):
+        previous = None
+        current = self.head
+        following = current.next
+        while current:
+            current.next = previous
+            previous = current
+            current = following
+            if following:
+                following = following.next
+        self.head = previous

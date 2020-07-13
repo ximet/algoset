@@ -69,3 +69,15 @@ def test_searchValueLinkedList():
     assert linkedList.search(2).value == 2
     assert linkedList.search(1).next.value == 2
     assert linkedList.search(3) == None
+
+# reverse test
+def test_reverseLinkedList():
+    linkedList = LinkedList()
+    linkedList.append(1)
+    linkedList.append(2)
+    linkedList.append(3)
+    linkedList.reverse()
+    counter = 3
+    for node in linkedList:
+        assert node.value == counter
+        counter -= 1
