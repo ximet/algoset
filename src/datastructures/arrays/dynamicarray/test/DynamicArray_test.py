@@ -1,3 +1,5 @@
+import pytest
+
 from src.datastructures.arrays.dynamicarray.DynamicArray import DynamicArray
 
 def test_dynamicArrayCheckAppendAndGetItem():
@@ -23,3 +25,10 @@ def test_dynamicArrayCheckResize():
     array.append(4)
     array.append(5)
     assert array.capacity == 8
+
+def test_dynamicArrayProblemWithIndex():
+    with pytest.raises(IndexError) as excinfo:
+        array = DynamicArray()
+        array.append(1)
+        elem = array[4]
+    assert 'invalid index' in str(excinfo.value)
