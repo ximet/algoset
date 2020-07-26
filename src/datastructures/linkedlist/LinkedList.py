@@ -20,6 +20,10 @@ class LinkedList:
             count += 1
             currentNode = currentNode.next
         return count
+
+    def prepend(self, value):
+        node = LinkedListNode(value, self.head)
+        self.head = node
     
     def append(self, value):
         node = LinkedListNode(value)
@@ -45,6 +49,17 @@ class LinkedList:
                     self.tail = prevNode
                 return self
             prevNode = node
+
+    def deleteHead(self):
+        if not self.head:
+            return None
+        deletedHead = self.head
+        if self.head.next:
+            self.head = self.head.next
+        else:
+            self.head = None
+            self.tail = None
+        return deletedHead
 
     def search(self, value):
         node = None
