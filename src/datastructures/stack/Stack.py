@@ -5,7 +5,7 @@ class Stack:
         self.stack = LinkedList()
     
     def isEmpty(self):
-        return self.stack.head != None
+        return self.stack.head == None
 
     def push(self, value):
         self.stack.prepend(value)
