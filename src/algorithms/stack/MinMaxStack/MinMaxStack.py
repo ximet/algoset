@@ -3,17 +3,16 @@ class MinMaxStack:
 		self.stack = []
 		self.minMaxStack = []
 
-    # O(1)		
-    def peek(self):
-        return self.stack[len(self.stack) - 1]
+  def peek(self):
+    return self.stack[len(self.stack) - 1]
 
     # O(1)
-    def pop(self):
+  def pop(self):
 		self.minMaxStack.pop()
         return self.stack.pop()
 
     # O(1)
-    def push(self, number):
+  def push(self, number):
 		newMinMax = {
 			"min": number,
 			"max": number
@@ -26,9 +25,9 @@ class MinMaxStack:
 		self.stack.append(number)
 
     # O(1)
-    def getMin(self):
-        return self.minMaxStack[len(self.minMaxStack) - 1]["min"]
+  def getMin(self):
+    return self.minMaxStack[len(self.minMaxStack) - 1]["min"]
 
     # O(1)
-    def getMax(self):
-        return self.minMaxStack[len(self.minMaxStack) - 1]["max"]
+  def getMax(self):
+    return self.minMaxStack[len(self.minMaxStack) - 1]["max"]
